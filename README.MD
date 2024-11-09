@@ -1,4 +1,3 @@
-
 # New York City Airbnb Analysis
 
 This project analyzes Airbnb listings in New York City using data from Kaggle. The goal is to uncover insights about prices, availability, and host activities across neighborhoods. By examining patterns in Airbnb listings, we can gain an understanding of market trends and neighborhood popularity in NYC.
@@ -17,6 +16,7 @@ In this project, I perform data analysis on New York City Airbnb data to explore
 - Average prices by neighborhood and room type
 - Host activity and number of listings per host
 - Availability patterns across the year
+
 This analysis can help understand the dynamics of short-term rentals in NYC and provide insights for hosts, guests, and policymakers.
 
 ## Dataset
@@ -31,26 +31,90 @@ The dataset used is the [New York City Airbnb Open Data](https://www.kaggle.com/
 - and more...
 
 ### File Location
-- The dataset file (`AB_NYC_2019.csv`) is located in the `data` folder of this repository.
+- The dataset file (`AB_NYC_2019.csv`) is located in the `Data` folder of this repository.
 
 ## Project Structure
 
-- `data/`: Contains the Airbnb dataset in CSV format.
-- `analysis.sql`: SQL queries used for data exploration and analysis.
-- `README.md`: Project documentation.
+- `Data/`: Contains the Airbnb dataset in CSV format.
+- `NYC_AirBnB.sql`: SQL file with queries used for data exploration and analysis.
+- `README.md`: Project documentation with detailed analysis report.
 
 ## Analysis and Insights
 
-Key insights from the analysis include:
-- **Average Price by Neighborhood**: Manhattan has the highest average listing price, while the Bronx has the lowest.
-- **Availability Trends**: Listings in Brooklyn and Manhattan have higher availability throughout the year.
-- **Top Hosts**: A small number of hosts manage a significant portion of listings, indicating some hosts operate at scale.
+This section outlines the key analyses performed and insights gained from each. For detailed SQL queries, see `NYC_AirBnB.sql`.
 
-Details of each analysis step can be found in the `analysis.sql` file (or `analysis_notebook.ipynb` if using Python).
+### 1. Summary Statistics for Price, Minimum Nights, and Availability
+   - **Purpose**: Provides a general overview of prices, availability, and minimum stay requirements across listings.
+   - **Insights**: 
+     - Average and maximum prices reveal NYC’s market pricing.
+     - Availability trends highlight potential booking patterns.
+   - **Business Value**: Useful for benchmarking individual listings against citywide averages.
+
+### 2. Average Price by Neighborhood
+   - **Purpose**: To identify price variation by neighborhood and understand which areas command the highest prices.
+   - **Insights**: 
+     - Manhattan has the highest average price, indicating high demand and luxury market.
+     - The Bronx has the lowest, suggesting budget-friendly options.
+   - **Business Value**: Helps investors and hosts set competitive prices based on location.
+
+### 3. Top 10 Most Expensive Listings by Neighborhood
+   - **Purpose**: Highlights premium listings within each neighborhood.
+   - **Insights**: Lists the highest-priced listings by neighborhood, identifying unique properties or luxury accommodations.
+   - **Business Value**: Allows hosts to benchmark their pricing against premium properties.
+
+### 4. Hosts with the Highest Average Listing Price
+   - **Purpose**: To discover hosts who manage multiple high-priced listings, possibly indicating professional property management.
+   - **Insights**: Identifies hosts managing premium listings, providing insights into market segmentation.
+   - **Business Value**: Useful for identifying professional operators and evaluating competitive pricing.
+
+### 5. Price Distribution by Room Type
+   - **Purpose**: Examines pricing by room type to understand median and average prices in each category.
+   - **Insights**: Shows how prices vary for entire homes, private rooms, etc., revealing where demand and supply align.
+   - **Business Value**: Helps hosts align their pricing with market expectations for each room type.
+
+### 6. Neighborhoods with the Highest Density of Listings
+   - **Purpose**: Identifies neighborhoods with the most listings per square mile, indicating high Airbnb activity.
+   - **Insights**: Dense neighborhoods like Manhattan and Brooklyn suggest popular areas for visitors.
+   - **Business Value**: Assists in assessing competition and market saturation in popular neighborhoods.
+
+### 7. Correlation Check: Price vs. Number of Reviews
+   - **Purpose**: Checks if high prices correlate with high review counts, suggesting quality or demand.
+   - **Insights**: Reveals whether expensive listings receive more or fewer bookings, signaling demand levels.
+   - **Business Value**: Helps hosts understand demand based on pricing.
+
+### 8. Seasonality Insight: Listing Activity by Last Review Month
+   - **Purpose**: Analyzes review counts by month to infer seasonality in bookings.
+   - **Insights**: Peaks in summer months suggest tourist season trends.
+   - **Business Value**: Enables hosts to optimize pricing during peak seasons and plan maintenance during low seasons.
+
+### 9. Listings with High Minimum Stay Requirements, Categorized by Room Type
+   - **Purpose**: Focuses on listings with high minimum nights, typically catering to long-term guests.
+   - **Insights**: Shows which room types are more often used for long stays, useful for corporate travel or longer vacations.
+   - **Business Value**: Helps property owners understand the market for long-term rentals.
+
+### 10. Availability Analysis by Price Range
+   - **Purpose**: Segments listings into price ranges to analyze availability trends within each range.
+   - **Insights**: High-priced listings with low availability suggest demand, while low-priced with high availability indicate high competition.
+   - **Business Value**: Enables hosts to position listings competitively within price ranges to balance occupancy and revenue.
+
+### 11. Price Outliers Detection (Using Standard Deviation)
+   - **Purpose**: Identifies listings with prices significantly above the average, suggesting unique or mispriced properties.
+   - **Insights**: Outliers may represent luxury listings or potential pricing errors.
+   - **Business Value**: Helps hosts identify pricing inconsistencies and benchmark against high-end listings.
+
+### 12. Manhattan Key Statistics Comparison with City Averages
+   - **Purpose**: Compares Manhattan’s metrics to citywide averages to highlight unique characteristics of the Manhattan market.
+   - **Insights**: Higher prices and lower availability in Manhattan reflect a premium, in-demand market.
+   - **Business Value**: Provides benchmarks for Manhattan-specific pricing and availability.
 
 ## Technologies Used
 
 - **SQL** for data analysis and querying
-- **Python** and **Pandas** (if using Jupyter Notebook)
 - **Git** for version control
-- **GitHub** for project hosting
+- **GitHub** for project hosting.
+
+## Conclusion
+
+This analysis provides a comprehensive look at New York City's Airbnb market, revealing key trends in pricing, host behavior, and availability. The findings can guide decision-making for hosts, investors, and policymakers. By examining neighborhood-specific insights, seasonal trends, and host activity, this project offers a data-driven understanding of the NYC Airbnb landscape.
+
+For more details on each query, see the [SQL file](./NYC_AirBnB.sql).
